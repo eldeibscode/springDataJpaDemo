@@ -20,6 +20,8 @@ public class Student {
     )
     private Long id;
     private String name;
+
+    private String firstName;
     private String email;
     private LocalDate dob;
 
@@ -36,10 +38,19 @@ public class Student {
         this.dob = dob;
     }
 
-    public Student(String name, String email, LocalDate dob) {
+    public Student(String name, String firstName, String email, LocalDate dob) {
         this.name = name;
+        this.firstName = firstName;
         this.email = email;
         this.dob = dob;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public Long getId() {

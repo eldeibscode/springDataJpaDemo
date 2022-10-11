@@ -23,16 +23,19 @@ class DemoApplicationTests {
 	@Test
 	public void whenUsingMultipleFilters_dataShouldBeFiltered(){
 		Student moh = new Student(
+				"Eldeib",
 				"Mohamed",
 				"mohamed@gmail.com",
 				LocalDate.of(1990,03,31)
 		);
 		Student ruka = new Student(
+				"Eldeib",
 				"Ruka",
 				"ruka@gmail.com",
 				LocalDate.of(1997,03,31)
 		);
 		Student abdo = new Student(
+				"Eldeib",
 				"abdo",
 				"abdo@gmail.com",
 				LocalDate.of(1999,03,31)
@@ -55,16 +58,19 @@ class DemoApplicationTests {
 	public void isEligibleForScholarshipTest(){
 
 		Student moh = new Student(
+				"Eldeib",
 				"Mohamed",
 				"mohamed@gmail.com",
 				LocalDate.of(1990,03,31)
 		);
 		Student ruka = new Student(
+				"Eldeib",
 				"Ruka",
 				"ruka@gmail.com",
 				LocalDate.of(1997,03,31)
 		);
 		Student abdo = new Student(
+				"Eldeib",
 				"abdo",
 				"abdo@gmail.com",
 				LocalDate.of(1999,03,31)

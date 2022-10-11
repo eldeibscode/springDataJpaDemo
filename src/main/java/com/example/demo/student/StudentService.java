@@ -1,6 +1,8 @@
 package com.example.demo.student;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
@@ -25,10 +27,27 @@ public class StudentService {
     }
 
     public List<Student> getStudents(){
+        return studentRepository.findAll();
+    }
+
+    public List<Student> getStudentsSortedByNameAndId(){
         return studentRepository.findAll(
                 Sort.by(Sort.Direction.ASC, "name")
                         .and(Sort.by(Sort.Direction.ASC, "id"))
         );
+    }
+
+
+    public List<Student> getStudentsPage(int page, int size){
+
+        PageRequest pageRequest = PageRequest.of(
+                page,
+                size,
+                Sort.by("name").ascending()
+        );
+        Page<Student> studentPage = studentRepository.findAll(pageRequest);
+        return studentPage.toList();
+
     }
 
     public void prinntSomthing(){
